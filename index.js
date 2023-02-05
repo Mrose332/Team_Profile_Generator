@@ -1,69 +1,97 @@
 const inquirer = require('inquirer');
-const fs = require('fs'); 
-const generateHTML = require('./src/generateHTML');
+const fs = require('fs');
+const { generateManager, generateEngineer, generateIntern } = require('./src/generatehtml');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern'); 
+const Intern = require('./lib/Intern');
 
 
 const questions = [{
     type: 'input',
-    name: 'name',
+    name: 'managerName',
     message: 'Who is the manager?',
     validate: nameInput => {
         if (nameInput) {
             return true;
         } else {
             console.log('Enter Managers name');
-            return false; 
+            return false;
         }
-    } 
+    }
 }, {
 
     type: 'input',
-    name: 'id',
+    name: 'managerId',
     message: 'Enter manager ID?'
 
 }, {
     type: 'input',
-    name: 'email',
+    name: 'managerEmail',
     message: 'Enter managers email'
 
 }, {
     type: 'input',
-    name: 'description',
-    message: 'Enter managers office number?'
+    name: 'managerOfficeNumber',
+    message: 'Enter managers office number?',
 
-    .then(managerInput => {
-        const  { name, id, email, officeNumber } = managerInput; 
-        const manager = new Manager (name, id, email, officeNumber);
-
-    })
-
-    
 }, {
     type: 'list',
-    name: 'license',
-    choices: ['MIT', 'GPU'],
-    message: 'Pick a license for your project?'
+    name: 'role',
+    choices: ['ENGINEER', 'INTERN'],
+    message: 'Choose Role?'
+
+}, {
+	type: 'input',
+	name: 'enginnerName',
+	message: 'Enter engineers name?',
 }, {
     type: 'input',
-    name: 'installation',
-    message: 'What are the steps to install your project?'
+	name: 'enginnerId',
+	message: 'Enter engineers Id?',
 
 }, {
     type: 'input',
-    name: 'usage',
-    message: 'Enter a usage description'
+	name: 'enginnerGithub',
+	message: 'Enter engineers Github username?',
+}, {
+    type: 'list',
+    name: 'role',
+    choices: ['ENGINEER', 'INTERN'],
+    message: 'Choose Role?'
+}, {
+
+    type: 'input',
+    name: 'intername',
+    message: 'Enter intern name?'
+
+
+}, {
+
+    type: 'input',
+    name: 'managerId',
+    message: 'Enter manager ID?'
 
 }, {
     type: 'input',
-    name: 'contributors',
-    message: 'what are the contributing guidelines for the repo?' 
+    name: 'internEmail',
+    message: 'Enter intern email'
 
 }, {
     type: 'input',
-    name: 'test', 
-    message: 'What command to use to run tests?',
-    default: 'npm test'
+    name: 'internSchool',
+    message: 'Enter intern school'
+
+
 }];
+
+inquirer.prompt(questions).then(data => {
+	const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
+	const enginner = new Engineer(data.enginnerName, data.engineerId, data.engineerGithub);
+    const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
+	const managerHtml = generateManager(manager);
+	const enginnerHtml = generateEngineer(enginner);
+    const internHtml = generateIntern(intern);
+	const htmlToWrite = enginnerHtml + managerHtml + internHtml;
+	fs.writeFile('test.html', htmlToWrite, (error) => console.log(error))
+})
+

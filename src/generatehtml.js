@@ -40,3 +40,9 @@ const generateIntern = function (intern) {
 
     `
 };
+
+module.exports = {
+	generateIntern,
+	generateEngineer,
+	generateManager
+}
