@@ -1,0 +1,33 @@
+.container {
+    width:660px;
+    height:230px;
+    background-color:rgb(142, 199, 161);
+    padding-top:20px;
+    padding-left:15px;
+    padding-right:15px;
+}
+#box-1 {
+    float:left;
+    width:200px;
+    height:200px;
+    background-color:white;
+    border:solid black;
+}
+#box-2 {
+    float:left;
+    width:200px;
+    height:200px;
+    background-color:white;
+    border:solid black;
+    margin-left:20px;
+}
+#box-3 {
+    float:right;
+    width:200px;
+    height:200px;
+    background-color:white;
+    border:solid black;
+}
+h1 {
+    color:rgb(0, 0, 0);
+}
