@@ -7,13 +7,13 @@ test("Given an employee name returns the name on the object", () => {
 
 test("Can set id ", () => {
   const testValue = 100;
-  const e = new Employee("Foo", testValue);
+  const e = new Employee("mike", testValue);
   expect(e.id).toBe(testValue);
 });
 
 test("Can set email ", () => {
   const testValue = "mike@gmail.com";
-  const e = new Employee("Foo", 1, testValue);
+  const e = new Employee("mike", 1, testValue);
   expect(e.email).toBe(testValue);
 });
 
@@ -25,13 +25,13 @@ test("Can retreive name by getName()", () => {
 
 test("Can retrieve Id by getId()", () => {
   const testValue = 200;
-  const e = new Employee("Foo", testValue);
+  const e = new Employee("mike", testValue);
   expect(e.getId()).toBe(testValue);
 });
 
 test("Can retrieve email by getEmail()", () => {
   const testValue = "mike@gmail.com";
-  const e = new Employee("Foo", 1, testValue);
+  const e = new Employee("mike", 1, testValue);
   expect(e.getEmail()).toBe(testValue);
 });
 
