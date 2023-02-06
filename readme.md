@@ -24,7 +24,7 @@ Project is license under MIT
 ## Usage 
 <img src="src/images/image.jpeg">
 
-<a href="https://drive.google.com/file/d/1bwxTXjYR7Mu0EOfxnrRxLljV3au-eL2N/preview" width="640" height="480"><Link to Video</a>
+<a href="https://drive.google.com/file/d/1bwxTXjYR7Mu0EOfxnrRxLljV3au-eL2N/preview" width="640" height="480">Link to Video</a>
 
 ## Contributing 
 
