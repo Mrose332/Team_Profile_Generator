@@ -27,7 +27,7 @@ const questions = [{
 }, {
     type: 'input',
     name: 'managerEmail',
-    message: 'Enter managers email'
+    message: 'Enter managers email?'
 
 }, {
     type: 'input',
@@ -47,46 +47,47 @@ const questions = [{
 }, {
     type: 'input',
 	name: 'enginnerId',
-	message: 'Enter engineers Id?',
+	message: 'Enter engineer ID?',
 
 }, {
     type: 'input',
 	name: 'enginnerGithub',
 	message: 'Enter engineers Github username?',
+
 }, {
-    type: 'list',
-    name: 'role',
-    choices: ['ENGINEER', 'INTERN'],
-    message: 'Choose Role?'
+    type: 'input',
+    name: 'engineerEmail',
+    message: 'Enter engineer email?'
+
 }, {
 
     type: 'input',
-    name: 'intername',
+    name: 'internName',
     message: 'Enter intern name?'
 
 
 }, {
 
     type: 'input',
-    name: 'managerId',
-    message: 'Enter manager ID?'
+    name: 'InternId',
+    message: 'Enter intern ID?'
 
 }, {
     type: 'input',
     name: 'internEmail',
-    message: 'Enter intern email'
+    message: 'Enter intern email?'
 
 }, {
     type: 'input',
     name: 'internSchool',
-    message: 'Enter intern school'
+    message: 'Enter intern school?'
 
 
 }];
 
 inquirer.prompt(questions).then(data => {
 	const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
-	const enginner = new Engineer(data.enginnerName, data.engineerId, data.engineerGithub);
+	const enginner = new Engineer(data.enginnerName, data.engineerId, data.engineerGithub, data.engineerEmail);
     const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
 	const managerHtml = generateManager(manager);
 	const enginnerHtml = generateEngineer(enginner);
