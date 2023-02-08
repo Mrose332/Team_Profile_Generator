@@ -39,4 +39,4 @@ NPM Tests
 Reach me for additional questions at: mailto:mrose332@gmail.com.
 
 
-To view deployed project at: https://github.com/Mrose332/readme-generator.git.
+To view deployed project at: https://mrose332.github.io/Team_Profile_Generator/.
