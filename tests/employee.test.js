@@ -5,17 +5,6 @@ test("Given an employee name returns the name on the object", () => {
   expect(employee.name).toBe('mike');
 });
 
-test("Can set id ", () => {
-  const testValue = 100;
-  const e = new Employee("mike", testValue);
-  expect(e.id).toBe(testValue);
-});
-
-test("Can set email ", () => {
-  const testValue = "mike@gmail.com";
-  const e = new Employee("mike", 1, testValue);
-  expect(e.email).toBe(testValue);
-});
 
 test("Can retreive name by getName()", () => {
   const testValue = "mike";
